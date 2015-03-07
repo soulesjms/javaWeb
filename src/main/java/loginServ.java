@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,7 +28,7 @@ public class loginServ extends HttpServlet {
 
         if (username.equals(keyUsername) && keyPassword.equals(password)) {
             request.getSession().setAttribute("username", username);
-            request.getRequestDispatcher("welcome.jsp").forward(request, response);
+            request.getRequestDispatcher("ShowComments").forward(request, response);
         } else {
             request.getRequestDispatcher("badLogin.jsp").forward(request, response);            
         }
